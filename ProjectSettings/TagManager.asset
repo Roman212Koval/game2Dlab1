@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Obstacle
   - Mine
+  - Floor
+  - no-road
   layers:
   - Default
   - TransparentFX
