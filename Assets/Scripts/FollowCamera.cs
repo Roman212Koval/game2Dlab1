@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowCamera : MonoBehaviour
+namespace Assets.Scripts
 {
-    public Transform player;
-    public Vector3 offset;
-
-    // Update is called once per frame
-    void Update()
+    public class FollowCamera : MonoBehaviour
     {
-        transform.position = player.position + offset;
+        public Transform player;
+        public Vector3 offset;
+
+        // Update is called once per frame
+        void Update()
+        {
+            transform.position = player.position + offset;
+        }
     }
 }

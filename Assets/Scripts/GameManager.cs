@@ -1,34 +1,36 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
-{
-    public Player movement;
-    public float levelRestartDelay = 3f;
-    public float level;
 
-    public void EndGame()
+    public class GameManager : MonoBehaviour
     {
-        movement.enabled = false;
+        public Player movement;
+        public float levelRestartDelay = 3f;
+        public float level;
 
-        Invoke("RestartLevel", levelRestartDelay);
-    }
-
-    void RestartLevel()
-    {
-        switch (level)
+        public void EndGame()
         {
-            case 1:
-                SceneManager.LoadScene("SampleScene");
-                break;
+            movement.enabled = false;
 
-            case 2:
-                SceneManager.LoadScene("SampleScene2");
-                break;
+            Invoke("RestartLevel", levelRestartDelay);
+        }
 
-            case 3:
-                SceneManager.LoadScene("SampleScene3");
-                break;
+        void RestartLevel()
+        {
+            switch (level)
+            {
+                case 1:
+                    SceneManager.LoadScene("SampleScene");
+                    break;
+
+                case 2:
+                    SceneManager.LoadScene("SampleScene2");
+                    break;
+
+                case 3:
+                    SceneManager.LoadScene("SampleScene3");
+                    break;
+            }
         }
     }
-}
+

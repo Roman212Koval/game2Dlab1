@@ -974,7 +974,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101687495}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -3, y: 0.45, z: -303}
+  m_LocalPosition: {x: -3, y: 0.44, z: -303}
   m_LocalScale: {x: 0.2, y: 500, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3155,7 +3155,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301864182}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 3.02, y: 0.45, z: -303}
+  m_LocalPosition: {x: 3.02, y: 0.44, z: -303}
   m_LocalScale: {x: 0.2, y: 500, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -12570,7 +12570,6 @@ GameObject:
   - component: {fileID: 2077122462}
   - component: {fileID: 2077122461}
   - component: {fileID: 2077122467}
-  - component: {fileID: 2077122469}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -12670,29 +12669,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &2077122469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2077122460}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2085990d10972a64fb55f5befd339744, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _movement: {fileID: 0}
-  rb: {fileID: 2077122467}
-  gm: {fileID: 1708747247}
-  runSpeed: 10
-  strafeSpeed: 75
-  jumpForce: 200
-  CanvMenu: {fileID: 0}
-  Victory: {fileID: 0}
-  audioGameOver: {fileID: 0}
-  audioJump: {fileID: 0}
-  audioVictory: {fileID: 0}
 --- !u!1001 &2080749789
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13407,7 +13383,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8296172668621213566}
   m_LocalRotation: {x: -0, y: -0, z: 5.8122396e-12, w: 1}
-  m_LocalPosition: {x: 0.84, y: 0.68, z: 141.605}
+  m_LocalPosition: {x: 0.84, y: 0.7, z: 141.605}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 623441750797004231}
@@ -13726,10 +13702,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2085990d10972a64fb55f5befd339744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpeedY: 0
+  Speed: 0
   _movement: {fileID: 8296172668621213570}
   rb: {fileID: 8296172668621213568}
   gm: {fileID: 1708747247}
-  runSpeed: 10
   strafeSpeed: 50
   jumpForce: 25
   CanvMenu: {fileID: 1135316038}
