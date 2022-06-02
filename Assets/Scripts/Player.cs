@@ -10,6 +10,9 @@ using UnityEngine.UI;
     public class Player : MonoBehaviour
     {
     [SerializeField] private PhysicsMovement _movement;
+    [SerializeField] private Score scoreScript;
+    [SerializeField] private GameObject scoreText;
+    private Score score;
     public Rigidbody rb;
     public GameManager gm;
     private bool isOpenMenu = false;
@@ -29,6 +32,7 @@ using UnityEngine.UI;
         {
             this.InitBehaviors();
             this.SetBehaviorByDefault();
+            score = scoreText.GetComponent<Score>();
         }
 
         private void InitBehaviors()
@@ -80,20 +84,19 @@ using UnityEngine.UI;
         }
     //*************************************************************************************
 
-
-
-
-
-
-
         private void GoMenu()
         {
+       
             CanvMenu.SetActive(true);
             Time.timeScale = 0f;
-        }
+        
+
+    }
 
         private void GoVictory()
         {
+            int lastRunScore = int.Parse(scoreScript.scoreText.text.ToString());
+            PlayerPrefs.SetInt("lastRunScore", lastRunScore);
             Victory.SetActive(true);
             Time.timeScale = 0f;
         }
@@ -103,7 +106,8 @@ using UnityEngine.UI;
         void Update()
         {
             CaptureInput();
-        }
+
+    }
 
 
         private void CaptureInput()
@@ -145,14 +149,17 @@ using UnityEngine.UI;
             {
                 gm.EndGame();
                 audioGameOver.Play();
-                // audioSource.PlayOneShot(audioClip);
+                int lastRunScore = int.Parse(scoreScript.scoreText.text.ToString());
+                PlayerPrefs.SetInt("lastRunScore", lastRunScore);
                 Debug.Log("Зiткнення");
                 GoMenu();
-            }
+            
+        }
 
             if (collision.collider.tag == "Mine")
             {
-                //this.SetBehaviorFly();
+            //this.SetBehaviorFly();
+                score.scoreMultiplier = -10;
                 audioJump.Play();
                 rb.AddForce(Vector3.up * 30, ForceMode.Impulse);
                  this.SetBehaviorFly();
@@ -160,12 +167,14 @@ using UnityEngine.UI;
 
             if (collision.collider.tag == "Floor")
             {
-                this.SetBehaviorRoad();
-        }
+            score.scoreMultiplier = 3;
+            this.SetBehaviorRoad();
+            }
 
             if (collision.collider.tag == "no-road")
             {
-                this.SetBehaviorOffRoad();
+            score.scoreMultiplier = 1;
+            this.SetBehaviorOffRoad();
         }
         }
     }

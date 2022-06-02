@@ -11,7 +11,6 @@ using UnityEngine;
         {
         //Debug.Log("Enter Fly behavior");
 
-        jump = true;
 
         return runSpeed;
     }
@@ -24,11 +23,7 @@ using UnityEngine;
         public void Update(PhysicsMovement _movement, Rigidbody rb)
         {
 
-            if (jump == true)
-            {
-                //rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-                jump = false;
-            }
+
 
             _movement.Move(new Vector3(0, 0, -runSpeed));
             Debug.Log("Update Fly behavior");
